@@ -1,0 +1,358 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<title>POSTAL Archives | Paradise</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+
+<header>
+  <nav class="nav">
+    <a href="#inicio" class="logo">POSTAL<span>//</span></a>
+
+    <div class="nav-links">
+      <a href="#jogos">JOGOS</a>
+      <a href="#dude">POSTAL DUDE</a>
+      <a href="#timeline">CRONOLOGIA</a>
+      <a href="#sobre">ARQUIVO</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- =========================
+     INÍCIO
+========================= -->
+
+<section class="hero" id="inicio">
+  <div class="hero-inner">
+
+    <div>
+      <div class="eyebrow">RUNNING WITH SCISSORS // CLASSIFIED</div>
+
+      <h1>
+        WELCOME TO
+        <span>PARADISE.</span>
+      </h1>
+
+      <p>
+        Um arquivo dedicado à franquia POSTAL.
+        Explore os jogos, conheça as diferentes versões do Postal Dude
+        e descubra a história de uma das séries mais controversas
+        dos videogames.
+      </p>
+
+      <div class="actions">
+        <a href="#jogos" class="btn">ACESSAR ARQUIVO</a>
+        <a href="#dude" class="btn secondary">IDENTIFICAR DUDE</a>
+      </div>
+    </div>
+
+    <!-- FOTO PRINCIPAL: coloque dude-principal.jpg na pasta imagens -->
+
+    <div class="hero-image">
+      <div class="photo-placeholder">
+        <span class="placeholder-icon">▧</span>
+        <strong>FOTO PRINCIPAL</strong>
+        <small>imagens/dude-principal.jpg</small>
+      </div>
+
+      <img
+        src="https://static.wikia.nocookie.net/postal/images/1/10/POSTAL_red.jpg/revision/latest/scale-to-width-down/250?cb=20230602143101"
+        alt="Postal Dude"
+        onerror="this.style.display='none'"
+        onload="this.previousElementSibling.classList.add('hidden')"
+      >
+
+      <div class="hero-label">SUBJECT: POSTAL DUDE</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="ticker">
+  <span>NO REGERTS</span> ✦
+  <span>WELCOME TO PARADISE</span> ✦
+  <span>POSTAL ARCHIVES</span> ✦
+  <span>NO REGERTS</span> ✦
+</div>
+
+<!-- =========================
+     ESTATÍSTICAS
+========================= -->
+
+<section>
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">01 // CASE OVERVIEW</div>
+        <h2>O CASO <span>POSTAL</span></h2>
+      </div>
+
+      <p>
+        Do clássico isométrico ao mundo aberto em primeira pessoa,
+        a franquia passou por várias mudanças.
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <strong>1997</strong>
+        <span>PRIMEIRO JOGO</span>
+      </div>
+
+      <div class="stat">
+        <strong>FPS</strong>
+        <span>ERA POSTAL 2</span>
+      </div>
+
+      <div class="stat">
+        <strong>DUDE</strong>
+        <span>PERSONAGEM CENTRAL</span>
+      </div>
+
+      <div class="stat">
+        <strong>RWS</strong>
+        <span>ESTÚDIO ORIGINAL</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     CATÁLOGO DE JOGOS
+========================= -->
+
+<section class="games-section" id="jogos">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">02 // EVIDENCE DATABASE</div>
+        <h2>ARQUIVO DE <span>JOGOS</span></h2>
+      </div>
+
+      <p>
+        Cada jogo possui seu próprio espaço para a capa.
+        Use a pesquisa e os filtros para localizar os registros.
+      </p>
+    </div>
+
+    <input
+      type="search"
+      class="search"
+      id="search"
+      placeholder="Pesquisar jogo ou ano..."
+      aria-label="Pesquisar jogos"
+    >
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-filter="todos">TODOS</button>
+      <button class="filter" data-filter="principal">PRINCIPAIS</button>
+      <button class="filter" data-filter="expansao">EXPANSÕES</button>
+      <button class="filter" data-filter="remake">REMAKES</button>
+      <button class="filter" data-filter="spin-off">SPIN-OFFS</button>
+      <button class="filter" data-filter="compilacao">COLEÇÕES</button>
+    </div>
+
+    <div class="games-grid" id="gamesGrid"></div>
+
+    <p class="empty" id="empty">
+      Nenhum jogo encontrado. Tente outra pesquisa.
+    </p>
+
+  </div>
+</section>
+
+<!-- =========================
+     VERSÕES DO POSTAL DUDE
+========================= -->
+
+<section class="dude-section" id="dude">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">03 // SUBJECT IDENTIFICATION</div>
+        <h2>AS FACES DO <span>DUDE</span></h2>
+      </div>
+
+      <p>
+        Coloque uma imagem em cada ficha para comparar as aparências
+        do personagem ao longo da franquia.
+      </p>
+    </div>
+
+    <div class="dude-grid" id="dudeGrid"></div>
+
+    <div class="warning">
+      OBSERVAÇÃO: as fichas representam as principais encarnações
+      do personagem, não todas as roupas, skins ou modelos
+      promocionais já existentes.
+    </div>
+
+  </div>
+</section>
+
+<!-- =========================
+     LINHA DO TEMPO
+========================= -->
+
+<section id="timeline">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">04 // HISTORICAL RECORDS</div>
+        <h2>LINHA DO <span>TEMPO</span></h2>
+      </div>
+
+      <p>
+        Os principais marcos da franquia ao longo dos anos.
+      </p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <strong>1997</strong>
+        <h3>POSTAL</h3>
+        <p>O primeiro jogo da franquia, com perspectiva isométrica.</p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>2003</strong>
+        <h3>POSTAL 2</h3>
+        <p>A franquia passa para a primeira pessoa e apresenta Paradise.</p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>2005</strong>
+        <h3>APOCALYPSE WEEKEND</h3>
+        <p>Expansão da campanha de POSTAL 2.</p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>2011</strong>
+        <h3>POSTAL III</h3>
+        <p>Uma entrada em terceira pessoa com outra interpretação do personagem.</p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>2015</strong>
+        <h3>PARADISE LOST</h3>
+        <p>O Dude retorna a Paradise em uma expansão de POSTAL 2.</p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>2016</strong>
+        <h3>POSTAL REDUX</h3>
+        <p>Remake do jogo original com apresentação modernizada.</p>
+      </div>
+
+      <div class="timeline-item">
+        <strong>2022</strong>
+        <h3>POSTAL 4 E BRAIN DAMAGED</h3>
+        <p>Novas experiências em mundo aberto e ação acelerada.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =========================
+     SOBRE O PROJETO
+========================= -->
+
+<section class="games-section" id="sobre">
+  <div class="container">
+
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">05 // ARCHIVE NOTES</div>
+        <h2>SOBRE O <span>ARQUIVO</span></h2>
+      </div>
+    </div>
+
+    <p class="about-text">
+      POSTAL é uma franquia criada pela Running With Scissors,
+      conhecida por seu humor negro, sátira e diferentes estilos
+      de jogabilidade. Este site é um arquivo de fã para organizar
+      os jogos, as expansões e as diferentes versões do Postal Dude.
+    </p>
+
+    <div class="warning">
+      PROJETO DE FÃS — NÃO OFICIAL.<br>
+      POSTAL E SEUS PERSONAGENS SÃO PROPRIEDADE DE SEUS RESPECTIVOS TITULARES.<br><br>
+
+      FONTES PARA PESQUISA:<br>
+      <a href="https://runningwithscissors.com/" target="_blank" rel="noopener">
+        RUNNING WITH SCISSORS
+      </a><br>
+
+      <a href="https://store.steampowered.com/franchise/RWSStudios/" target="_blank" rel="noopener">
+        CATÁLOGO POSTAL NA STEAM
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- =========================
+     RODAPÉ
+========================= -->
+
+<footer>
+  <strong>POSTAL // PARADISE ARCHIVES</strong><br>
+  FAN-MADE PROJECT — NOT AN OFFICIAL WEBSITE.<br>
+  <span id="year"></span> // END OF FILE
+</footer>
+
+<!-- =========================
+     MODAL DE DETALHES
+========================= -->
+
+<div class="modal" id="modal" role="dialog"
+  aria-modal="true" aria-labelledby="modalTitle">
+
+  <div class="modal-content">
+
+    <div class="modal-top">
+      <div>
+        <div class="eyebrow">CONFIDENTIAL GAME RECORD</div>
+        <h2 id="modalTitle"></h2>
+      </div>
+
+      <button class="close" id="closeModal" aria-label="Fechar">×</button>
+    </div>
+
+    <div class="modal-meta" id="modalMeta"></div>
+    <p id="modalDescription"></p>
+    <p id="modalNote"></p>
+
+    <button class="btn" id="modalCloseBottom" style="margin-top:25px">
+      FECHAR ARQUIVO
+    </button>
+
+  </div>
+</div>
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

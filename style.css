@@ -1,0 +1,810 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Share+Tech+Mono&family=Roboto+Condensed:wght@400;700;900&display=swap');
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+:root {
+  --red: #ed2525;
+  --dark-red: #791414;
+  --black: #101010;
+  --panel: #191919;
+  --paper: #d7d0bd;
+  --muted: #938b81;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--paper);
+  font-family: 'Roboto Condensed', sans-serif;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  opacity: .07;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    white 4px
+  );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   NAVEGAÇÃO
+========================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(10, 10, 10, .97);
+  border-bottom: 2px solid var(--red);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-family: Anton, sans-serif;
+  font-size: 29px;
+  letter-spacing: 4px;
+  color: var(--red);
+}
+
+.logo span {
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+}
+
+.nav-links a {
+  transition: color .2s;
+}
+
+.nav-links a:hover {
+  color: var(--red);
+}
+
+/* =========================
+   CAPA PRINCIPAL
+========================= */
+
+.hero {
+  min-height: 620px;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 75% 45%, #791414 0%, transparent 38%),
+    linear-gradient(110deg, #080808 20%, #24100e 100%);
+  border-bottom: 1px solid #5b1a16;
+}
+
+.hero::after {
+  content: "PARADISE";
+  position: absolute;
+  right: -25px;
+  bottom: -35px;
+  font-family: Anton, sans-serif;
+  font-size: clamp(100px, 22vw, 290px);
+  color: rgba(255,255,255,.035);
+  pointer-events: none;
+}
+
+.hero-inner {
+  width: min(1200px, 100%);
+  min-height: 620px;
+  margin: auto;
+  padding: 70px 24px;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-family: Anton, sans-serif;
+  font-size: clamp(65px, 10vw, 130px);
+  line-height: .85;
+  text-transform: uppercase;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--red);
+}
+
+.hero p {
+  max-width: 520px;
+  margin-top: 25px;
+  color: #b3aca0;
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 20px;
+  background: var(--red);
+  color: white;
+  border: 1px solid var(--red);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px;
+  transition: .2s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--red);
+}
+
+.btn.secondary {
+  background: transparent;
+  border-color: #665d54;
+}
+
+/* Imagem de destaque do Postal Dude */
+
+.hero-image {
+  position: relative;
+  width: 100%;
+  max-width: 390px;
+
+  justify-self: center;
+  background: #151515;
+  border: 1px solid #76312b;
+  box-shadow: 12px 12px 0 #080808;
+  transform: rotate(2deg);
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  
+}
+
+.hero-image .photo-placeholder {
+  background:
+    linear-gradient(145deg, transparent 40%, #501411 100%),
+    #151515;
+}
+
+.hero-label {
+  position: absolute;
+  z-index: 4;
+  top: 14px;
+  left: 14px;
+  color: var(--red);
+  background: #101010;
+  padding: 8px 10px;
+  font: 12px 'Share Tech Mono', monospace;
+  letter-spacing: 2px;
+}
+
+/* =========================
+   ESPAÇOS PARA FOTOS
+========================= */
+
+.photo-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  text-align: center;
+  background: #151515;
+  border: 1px dashed #71302b;
+  color: var(--red);
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.photo-placeholder .placeholder-icon {
+  font-size: 42px;
+}
+
+.photo-placeholder strong {
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.photo-placeholder small {
+  color: #a69a8d;
+  font-size: 10px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.photo-placeholder.hidden {
+  display: none;
+}
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--red);
+  color: white;
+  padding: 14px;
+  font: 18px Anton, sans-serif;
+  letter-spacing: 3px;
+}
+
+.ticker span {
+  margin-right: 35px;
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+section {
+  padding: 80px 24px;
+  scroll-margin-top: 70px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.section-head h2 {
+  font: clamp(36px, 5vw, 58px)/1 Anton, sans-serif;
+  text-transform: uppercase;
+}
+
+.section-head h2 span {
+  color: var(--red);
+}
+
+.section-head > p {
+  max-width: 410px;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 14px;
+}
+
+/* =========================
+   ESTATÍSTICAS
+========================= */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid #39332e;
+  margin-bottom: 35px;
+}
+
+.stat {
+  padding: 24px;
+  border-right: 1px solid #39332e;
+}
+
+.stat:last-child {
+  border-right: 0;
+}
+
+.stat strong {
+  display: block;
+  color: var(--red);
+  font: 38px Anton, sans-serif;
+}
+
+.stat span {
+  color: #aaa197;
+  font: 10px 'Share Tech Mono', monospace;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   JOGOS
+========================= */
+
+.games-section {
+  background: #141414;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filter {
+  padding: 10px 13px;
+  background: transparent;
+  border: 1px solid #49413b;
+  color: #b8b0a5;
+  font: 11px 'Share Tech Mono', monospace;
+}
+
+.filter.active,
+.filter:hover {
+  background: var(--red);
+  border-color: var(--red);
+  color: white;
+}
+
+.search {
+  width: 100%;
+  max-width: 400px;
+  padding: 13px;
+  margin-bottom: 25px;
+  background: #090909;
+  border: 1px solid #4c4239;
+  color: white;
+  outline: none;
+}
+
+.search:focus {
+  border-color: var(--red);
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.game-card {
+  min-width: 0;
+  background: #191919;
+  border: 1px solid #39332e;
+  transition: transform .2s, border-color .2s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--red);
+}
+
+/* CAPA INDIVIDUAL DE CADA JOGO */
+
+.game-art {
+  height: 250px;
+  position: relative;
+  background: #0a0a0a;
+  border-bottom: 1px solid #39332e;
+  overflow: hidden;
+}
+
+.game-art img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #101010;
+}
+
+.game-art .edition {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 4;
+  max-width: calc(100% - 20px);
+  padding: 7px 9px;
+  background: rgba(10,10,10,.9);
+  border-left: 3px solid var(--red);
+  font: 10px 'Share Tech Mono', monospace;
+}
+
+.game-info {
+  padding: 20px;
+}
+
+.game-info .year {
+  color: var(--red);
+  font: 11px 'Share Tech Mono', monospace;
+}
+
+.game-info h3 {
+  margin: 9px 0 12px;
+  font: 23px/1.2 Anton, sans-serif;
+}
+
+.game-info p {
+  min-height: 80px;
+  color: #a7a096;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 15px;
+}
+
+.tag {
+  padding: 5px 7px;
+  border: 1px solid #443b34;
+  color: #aaa197;
+  font: 10px 'Share Tech Mono', monospace;
+}
+
+.more {
+  width: 100%;
+  margin-top: 20px;
+  padding: 13px;
+  background: transparent;
+  border: 1px solid #46332e;
+  color: var(--red);
+  font: 11px 'Share Tech Mono', monospace;
+}
+
+.more:hover {
+  background: var(--red);
+  color: white;
+}
+
+.empty {
+  display: none;
+  color: #aaa197;
+  padding: 30px 0;
+}
+
+/* =========================
+   POSTAL DUDE
+========================= */
+
+.dude-section {
+  background: linear-gradient(90deg, #0c0c0c 50%, #1b0b0a 100%);
+}
+
+.dude-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.dude-card {
+  min-width: 0;
+  padding: 18px;
+  background: #171717;
+  border: 1px solid #39332e;
+  transition: border-color .2s;
+}
+
+.dude-card:hover {
+  border-color: var(--red);
+}
+
+/* IMAGEM INDIVIDUAL DE CADA VERSÃO */
+
+.dude-photo-box {
+  position: relative;
+  height: 290px;
+  margin-bottom: 20px;
+  background: #101010;
+  overflow: hidden;
+  border: 1px solid #71302b;
+}
+
+.dude-photo {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  object-fit: contain;
+  background: #101010;
+}
+
+.dude-photo-box .photo-placeholder {
+  background:
+    radial-gradient(ellipse at center, #351311, transparent 70%),
+    #101010;
+}
+
+.dude-icon {
+  margin-bottom: 10px;
+  color: var(--red);
+  font: 34px Anton, sans-serif;
+}
+
+.dude-card h3 {
+  margin-bottom: 10px;
+  font: 25px Anton, sans-serif;
+}
+
+.dude-card p {
+  color: #aaa197;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.label {
+  display: inline-block;
+  margin-top: 15px;
+  color: var(--red);
+  font: 10px 'Share Tech Mono', monospace;
+  letter-spacing: 1px;
+}
+
+/* =========================
+   LINHA DO TEMPO
+========================= */
+
+.timeline {
+  margin-left: 8px;
+  padding-left: 30px;
+  border-left: 2px solid var(--red);
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 35px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -37px;
+  width: 12px;
+  height: 12px;
+  background: var(--red);
+  outline: 1px solid var(--red);
+  border: 3px solid var(--black);
+}
+
+.timeline-item strong {
+  color: var(--red);
+  font: 25px Anton, sans-serif;
+}
+
+.timeline-item h3 {
+  margin: 5px 0;
+  font-size: 19px;
+}
+
+.timeline-item p {
+  max-width: 650px;
+  color: #aaa197;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================
+   SOBRE E RODAPÉ
+========================= */
+
+.about-text {
+  max-width: 850px;
+  color: #aaa197;
+  line-height: 2;
+}
+
+.warning {
+  margin-top: 30px;
+  padding: 25px;
+  background: #1b0d0c;
+  border: 1px solid #64211d;
+  color: #c5b8a8;
+  font: 12px/2 'Share Tech Mono', monospace;
+  overflow-wrap: anywhere;
+}
+
+.warning a {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+footer {
+  padding: 35px 24px;
+  background: #080808;
+  border-top: 2px solid var(--red);
+  color: #766e65;
+  text-align: center;
+  font: 11px/2 'Share Tech Mono', monospace;
+}
+
+footer strong {
+  color: var(--red);
+}
+
+/* =========================
+   JANELA DE DETALHES
+========================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,.9);
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  width: min(600px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 30px;
+  background: #171717;
+  border: 1px solid var(--red);
+  box-shadow: 0 0 50px #000;
+}
+
+.modal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 15px;
+}
+
+.modal h2 {
+  color: var(--red);
+  font: 35px Anton, sans-serif;
+}
+
+.close {
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 30px;
+}
+
+.modal-meta {
+  margin-top: 20px;
+  color: var(--red);
+  font: 12px 'Share Tech Mono', monospace;
+}
+
+.modal-content p {
+  margin-top: 20px;
+  color: #b8b0a5;
+  line-height: 1.9;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 850px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .hero-image {
+    max-width: 340px;
+    height: 390px;
+  }
+
+  .games-grid,
+  .dude-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .stat:nth-child(-n+2) {
+    border-bottom: 1px solid #39332e;
+  }
+}
+
+@media (max-width: 540px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    gap: 13px;
+  }
+
+  .games-grid,
+  .dude-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 55px 18px;
+  }
+
+  .game-art {
+    height: 300px;
+  }
+
+  .dude-photo-box {
+    height: 340px;
+  }
+
+  .hero-image {
+    height: 360px;
+  }
+
+  .stat {
+    padding: 18px 12px;
+  }
+}
+
+
